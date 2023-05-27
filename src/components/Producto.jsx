@@ -39,7 +39,7 @@ export default function Producto({ producto, botonAgregar = false, botonDisponib
                     type="button"
                     className=" bg-indigo-600 hover:bg-indigo-900
                  text-white w-full mt-5 p-3 uppercase font-bold
-                 border-collapse
+                 border-collapse rounded-xl
             "
                     onClick={() => {
                         handleClickModal();
