@@ -57,7 +57,7 @@ export default function Login() {
                         <input
                             type="email"
                             id="email"
-                            className=" mt-2 w-full p-3 bg-gray-50"
+                            className=" mt-2 w-full p-3 bg-gray-50 outline-none"
                             name="email"
                             placeholder="Tu Correo"
                             ref={emailRef}
@@ -71,7 +71,7 @@ export default function Login() {
                         <input
                             type="password"
                             id="password"
-                            className=" mt-2 w-full p-3 bg-gray-50"
+                            className=" mt-2 w-full p-3 bg-gray-50 outline-none"
                             name="password"
                             placeholder="Tu Contrasena"
                             ref={passwordRef}
