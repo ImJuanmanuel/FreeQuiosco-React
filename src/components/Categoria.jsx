@@ -7,7 +7,7 @@ export default function Categoria({ categoria }) {
     const { icono, id, nombre } = categoria
     return (
         <div className={` ${categoriaActual.id === id ? " bg-amber-400" : " bg-white"} flex items-center gap-4 border w-full p-3
-         hover:bg-amber-300 cursor-pointer`}>
+         hover:bg-amber-300 cursor-pointer`} onClick={() => handleClickCategoria(id)}>
             
             <img 
             src={`/img/icono_${icono}.svg`} 
@@ -19,7 +19,7 @@ export default function Categoria({ categoria }) {
 
             <p className="text-2xl font-bold font-sans cursor-pointer truncate"
                 type="button"
-                onClick={() => handleClickCategoria(id)}
+                
             
             >
                 
