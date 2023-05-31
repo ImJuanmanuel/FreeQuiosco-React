@@ -2,6 +2,7 @@ import { createRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Alerta from '../components/Alerta';
 import { useAuth } from '../hooks/useAuth'; 
+import Spinner from '../components/Spinner';
 
 export default function Login() {
 
@@ -9,7 +10,7 @@ export default function Login() {
     const passwordRef = createRef();
     
 
-
+    const [cargando, setcargando] = useState(false)
     const [errores, setErrores] = useState([])
     const { login } = useAuth({
         middleware: 'guest',
@@ -23,7 +24,7 @@ export default function Login() {
             email: emailRef.current.value,
             password: passwordRef.current.value,
         }
-
+        setcargando(true)
         login(datos,setErrores)
         
 
@@ -95,6 +96,7 @@ export default function Login() {
                      "
 
                     />
+                    {cargando? <Spinner/>:null}
                 </form>
 
             </div>
