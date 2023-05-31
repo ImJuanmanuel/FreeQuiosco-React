@@ -30,7 +30,7 @@ export default function Login() {
       
         login(datos, setErrores)
           .then(() => {
-            setcargando(false)
+            setcargando(true)
           })
           .catch(() => {
             setcargando(false)
