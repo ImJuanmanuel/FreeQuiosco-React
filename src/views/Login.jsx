@@ -26,12 +26,11 @@ export default function Login() {
         }
         setcargando(true)
         login(datos,setErrores,setcargando)
-        setcargando(false)
+        
 
 
 
     }
-    
 
     return (
         <>
