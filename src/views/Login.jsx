@@ -28,7 +28,14 @@ export default function Login() {
         setcargando(true)
         setErrores([]) // Limpiar los errores antes de iniciar sesión
       
-        login(datos, setErrores)
+        login(datos)
+          .then(() => {
+            setcargando(true)
+          })
+          .catch(() => {
+            setcargando(false)
+          });
+        login(setErrores)
           .then(() => {
             setcargando(false)
           })
