@@ -18,31 +18,24 @@ export default function Login() {
     })
 
     const handleSubmit = async e => {
-        e.preventDefault();
-      
-        const datos = {
-          email: emailRef.current.value,
-          password: passwordRef.current.value,
-        }
-      
-        setcargando(true)
-        setErrores([]) // Limpiar los errores antes de iniciar sesión
-      
-        login(datos)
-          .then(() => {
-            setcargando(true)
-          })
-          .catch(() => {
-            setcargando(false)
-          });
-        login(setErrores)
-          .then(() => {
-            setcargando(false)
-          })
-          .catch(() => {
-            setcargando(true)
-          });
-      }
+  e.preventDefault();
+
+  const datos = {
+    email: emailRef.current.value,
+    password: passwordRef.current.value,
+  }
+
+  setcargando(true)
+  setErrores([]) // Limpiar los errores antes de iniciar sesión
+
+  login(datos, setErrores)
+    .then(() => {
+      setcargando(false)
+    })
+    .catch(() => {
+      setcargando(false)
+    });
+}
 
     return (
         <>
