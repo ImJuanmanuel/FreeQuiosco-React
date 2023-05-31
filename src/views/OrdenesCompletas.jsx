@@ -33,6 +33,7 @@ export default function OrdenesCompletas() {
     const handleFechaSeleccionada = async (event) => {
         setIsLoadingPedidos(true);
         setFechaSeleccionada(event.target.value);
+        await new Promise(resolve => setTimeout(resolve, 4000));
         setIsLoadingPedidos(false);
     };
 
