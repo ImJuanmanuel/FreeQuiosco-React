@@ -19,18 +19,23 @@ export default function Login() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-
+      
         const datos = {
-            email: emailRef.current.value,
-            password: passwordRef.current.value,
+          email: emailRef.current.value,
+          password: passwordRef.current.value,
         }
+      
         setcargando(true)
-        login(datos,setErrores,setcargando)
-        
-
-
-
-    }
+        setErrores([]) // Limpiar los errores antes de iniciar sesión
+      
+        login(datos, setErrores)
+          .then(() => {
+            setcargando(false)
+          })
+          .catch(() => {
+            setcargando(false)
+          });
+      }
 
     return (
         <>
